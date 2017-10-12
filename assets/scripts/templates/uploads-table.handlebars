@@ -1,0 +1,18 @@
+{{#each uploads as |upload|}}
+
+<tr data-id="{{upload.id}}">
+  <td>{{upload.name}}</td>
+  <td class="createdDate">{{upload.createdAt}}</td>
+  <td class="uploadedDate">{{upload.updatedAt}}</td>
+  <td>{{upload.uploadedBy}}</td>
+  <td>{{upload.tags}}</td>
+  <td><a href="{{upload.url}}"<button class="btn btn-success">Download</button></a></td>
+  <td>
+    {{#if upload.editable }}
+      <button class="edit-btn btn btn-info">Edit</button>
+      <button class="delete-btn btn btn-danger">Delete</button>
+    {{/if}}
+  </td>
+</tr>
+
+{{/each}}

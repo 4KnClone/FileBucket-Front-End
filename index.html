@@ -12,14 +12,94 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body class="container-fluid">
-      <h1>Example</h1>
+      <!-- User auth forms -->
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      <p id='message'></p>
+  <section id='auth'>
+
+    <form id="sign-up" class='secondary-hide'>
+      <fieldset>
+        <h5>Sign up</h5>
+        <input type="text" name="credentials[email]" placeholder="Input email">
+        <input type="password" name="credentials[password]" placeholder="Input password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+       <button class="btn btn-success" type="submit" name="submit" >Sign up! </button>
+      </fieldset>
+    </form>
+
+
+    <form id="sign-in" class='secondary-hide'>
+      <h5 class='secondary-hide'>Sign In</h5>
+      <input type="text" name="credentials[email]" placeholder="Input email">
+      <input type="password" name="credentials[password]" placeholder="Input password">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+
+
+    <form id="change-password" class='initial-hide'>
+      <h5 class='initial-hide'>Change Password</h5>
+      <input type="password" name="passwords[old]" placeholder="Input old password">
+      <input type="password" name="passwords[new]" placeholder="Input new password">
+      <button type="submit" class="btn btn-warning">Submit</button>
+    </form>
+
+    <form id="sign-out" class='initial-hide'>
+      <button type="submit" class="btn btn-danger">
+        Sign out
+      </button>
+    </form>
+
+  </section>
+
+      <!-- File upload form -->
+      <form id="application-x-www-form-data">
+          <fieldset>
+            <legend>enctype unset</legend>
+            <label>
+              Title
+              <input type="text" name="image[title]">
+            </label>
+            <label>
+              Image
+              <input type="file" name="image[file]">
+            </label>
+            <input type="submit" name="submit" value="Upload">
+          </fieldset>
+        </form>
+        <form id="multipart-form-data" enctype="multipart/form-data">
+          <fieldset>
+            <legend>enctype="multipart/form-data"</legend>
+            <label>
+              Title
+              <input type="text" name="file[name]">
+            </label>
+            <label>
+              File
+              <input type="file" name="file[file]">
+            </label>
+            <input type="submit" name="submit" value="Upload">
+          </fieldset>
+        </form>
+
+        <br>
+        <br>
+
+        <div class="uploads-table">
+          <table class="table">
+            <thead class="thead-inverse">
+              <tr>
+                <th>File Name</th>
+                <th>Date Created</th>
+                <th>Date Modified</th>
+                <th>Uploaded By</th>
+                <th>Tags</th>
+                <th>Download</th>
+                <th>Options</th>
+              </tr>
+            </thead>
+            <tbody class="table-body">
+            </tbody>
+          </table>
+        </div>
     </body>
 </html>
