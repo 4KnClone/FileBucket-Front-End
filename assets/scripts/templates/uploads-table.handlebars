@@ -1,11 +1,12 @@
+<button class="btn btn-success align-right" id="refresh">Refresh List</button>
 <table class="table">
   <thead class="thead-inverse">
     <tr>
-      <th>File Name</th>
-      <th>Date Created</th>
       <th>Date Modified</th>
       <th>Uploaded By</th>
       <th>Tags</th>
+      <th>File Name</th>
+      <th>Date Created</th>
       <th>Download</th>
       <th>Options</th>
     </tr>
@@ -16,10 +17,14 @@
 
 <tr data-id="{{upload.id}}">
   <td>{{upload.name}}</td>
-  <td class="createdDate">{{upload.createdAt}}</td>
-  <td class="uploadedDate">{{upload.updatedAt}}</td>
   <td>{{upload.uploadedBy}}</td>
-  <td>{{upload.tags}}</td>
+  <td class="td-tags">
+    {{#each upload.tags}}
+      <a class="hashtag">#{{this}} </a>
+    {{/each}}
+  </td>
+  <td class="createdDate">{{upload.createdAt}}</td>
+  <td class="updatedDate">{{upload.updatedAt}}</td>
   <td><a href="{{upload.url}}"<button class="btn btn-success">Download</button></a></td>
   <td>
     {{#if upload.editable }}

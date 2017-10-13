@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>FileDumpling</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -16,7 +16,7 @@
       <nav class="nav navbar" id="topnav">
       <ul>
         <li class="title">
-          <h1>FileBucket</h1>
+        <h1 class="text-green text-center main-title">FileDumpling <img src="https://av-wdi-20.s3.amazonaws.com/filebucket/2017-10-13/1548bced738dd0bcb864e5d08d8a55d0.png" alt="dumpling" style="height:100px;"></h1>
         </li>
           <!-- User auth forms modal -->
         <li class="modal-button">
@@ -25,22 +25,44 @@
         </li>
       </ul>
     </nav>
+    <hr>
           <!-- File upload form -->
+<br> <h3 id="message_02" class="center"> </h3>
+        <div class="center">
+          <form class="initial-hide" id="multipart-form-data" enctype="multipart/form-data">
+            <fieldset>
+              <h3 class="text-green center">Upload a File</h3>
+              <label class="text-green center">Title <span class="required">*</span>
+                <input class="underline input-title"type="text" name="file[name]">
+              <label class="text-green center">Tags
+                <input class="underline input-title"type="text" name="file[tags]"></label>
+                <div class="row">
+                  <div class="col-xs-3">
+                  </div>
+                  <div class="col-xs-6">
+                    <div class="file-upload-container">
+                      <div>
+                        <div class="input-group">
+                          <label class="input-group-btn">
+                            <span class="btn btn-success">
+                              Choose a File<input type="file"
+                              name="file[file]" style="display: none;">
+                            </span>
+                          </label>
+                          <input type="text" class="form-control" readonly>
+                          <input class="btn btn-success" type="submit" name="submit" value="Upload">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                  </div>
+                </div>
+            </fieldset>
 
-      <form class="initial-hide" id="multipart-form-data" enctype="multipart/form-data">
-        <fieldset>
-          <legend>Upload a File</legend>
-          <label>
-            Title
-            <input type="text" name="file[name]">
-          </label>
-          <label>
-            File
-            <input type="file" name="file[file]">
-          </label>
-          <input type="submit" name="submit" value="Upload">
-        </fieldset>
-      </form>
+          </form>
+
+        </div>
 
         <br>
         <br>
@@ -51,33 +73,33 @@
         <div class="modal fade" id="auth-modal" tabindex="-1" aria-hidden="true">
         <!-- auth content -->
           <div class="modal-content">
-            <span class="close">&times;</span>
+            <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
             <p id='message'></p>
             <section id='auth'>
 
               <form id="sign-up" class='secondary-hide'>
                 <fieldset>
-                  <h4>Sign up</h4>
-                  <input type="text" name="credentials[email]" placeholder="Input email">
-                  <input type="password" name="credentials[password]" placeholder="Input password">
-                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <h4 class="text-green">Sign up</h4>
+                  <input class="underline" type="text" name="credentials[email]" placeholder="Input email">
+                  <input class="underline" type="password" name="credentials[password]" placeholder="Input password">
+                  <input class="underline" type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
                  <button class="btn btn-success" type="submit" name="submit" >Sign up! </button>
                 </fieldset>
               </form>
 
 
               <form id="sign-in" class='secondary-hide'>
-                <h4 class='secondary-hide'>Sign In</h4>
-                <input type="text" name="credentials[email]" placeholder="Input email">
-                <input type="password" name="credentials[password]" placeholder="Input password">
+                <h4 class='secondary-hide text-green'>Sign In</h4>
+                <input class="underline" type="text" name="credentials[email]" placeholder="Input email">
+                <input class="underline" type="password" name="credentials[password]" placeholder="Input password">
                 <button type="submit" class="btn btn-success">Submit</button>
               </form>
 
 
               <form id="change-password" class='initial-hide'>
-                <h4 class='initial-hide'>Change Password</h4>
-                <input type="password" name="passwords[old]" placeholder="Input old password">
-                <input type="password" name="passwords[new]" placeholder="Input new password">
+                <h4 class='initial-hide text-green'>Change Password</h4>
+                <input class="underline" type="password" name="passwords[old]" placeholder="Input old password">
+                <input class="underline" type="password" name="passwords[new]" placeholder="Input new password">
                 <button type="submit" class="btn btn-success">Submit</button>
               </form>
 

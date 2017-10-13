@@ -5,8 +5,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   font-family: 'Montserrat', sans-serif;
   font-weight: lighter;
+  background-color: #fafafa;
 }
-h1 {
+.main-title{
   display: inline;
   float: left;
 }
@@ -16,22 +17,36 @@ h1 {
   margin-top: 2em;
   margin-right: 2em;
 }
-
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #5e4245;
+    margin-bottom: 1em;
+    padding: 0;
+}
 ul {
   list-style: none;
 }
-form h4 {
-  color: #68b559;
+.text-green {
+  color: #67ab58;
   font-weight: bold;
 }
-input {
+.underline {
   border-style: none;
-  border-bottom: solid #000 3px;
+  border-bottom: solid #5e4245 2px;
   margin: 2em;
   width: 18em;
+  background-color: #fefefe;
+}
+.btn-file {
+  margin-right: 2em;
 }
 form {
   padding-bottom: 2em;
+}
+.input-title {
+  background-color: #fafafa;
 }
 #navbar-toggle-cbox {
   display:none
@@ -49,8 +64,23 @@ form {
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-input {
-  background-color: #fefefe;
+.required {
+  color: #ff0000;
+}
+.center {
+  text-align: center;
+}
+// .file-upload-container {
+//   padding-left: 35%;
+//
+// }
+.align-right {
+  float: right;
+  margin-right: 2em;
+}
+
+.input-group .form-control {
+  width: 20em !important;
 }
 
 .modal-content {
@@ -58,7 +88,7 @@ input {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #444;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
     overflow: auto;
 }
 
