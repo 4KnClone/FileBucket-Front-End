@@ -89,8 +89,6 @@ const onEditUpload = function () {
 
 const onConfirmEdit = function (elementId, fileName, tags) {
   const newFileName = $(fileName).html()
-  // let newTags = $(tags).text().replace(/\s/g, '')
-  // console.log(newTags)
   let newTags = tags.replace(/[^a-z0-9 ]/gi, '').split(' ')
   if (newTags[0] === '') {
     newTags = null
