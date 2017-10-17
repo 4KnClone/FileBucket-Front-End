@@ -63,7 +63,10 @@ const onEditUpload = function () {
   tags.contentEditable = true
   $(fileName).css('background-color', 'rgba(255, 255, 0, 0.5)') // Show user editable fields
   $(tags).css('background-color', 'rgba(255, 255, 0, 0.5)')
+  let tagString = $(tags).text()
+  tagString = $(tags).text().replace(/#/g, ' ')
   $(tags).html('')
+  $(tags).text(tagString)
   $(fileName).keydown(function (e) { // Prevent user from adding new lines in table
     if (e.which === 13) { // 13 --> enter key
       fileName.blur()
@@ -78,13 +81,17 @@ const onEditUpload = function () {
   $(this).parent().append('<button class="btn btn-info confirm-edit-btn">Confirm</button>')
   $(this).hide() // Hide edit button
   $('.confirm-edit-btn').on('click', function () {
-    onConfirmEdit(elementId, fileName, tags)
+    let newTags = $.trim($(tags).text())
+    newTags = newTags.replace(/\s\s+/g, ' ')
+    onConfirmEdit(elementId, fileName, newTags)
   })
 }
 
 const onConfirmEdit = function (elementId, fileName, tags) {
   const newFileName = $(fileName).html()
-  let newTags = $(tags).html().replace(/[^a-z0-9 ]/gi, '').split(' ')
+  // let newTags = $(tags).text().replace(/\s/g, '')
+  // console.log(newTags)
+  let newTags = tags.replace(/[^a-z0-9 ]/gi, '').split(' ')
   if (newTags[0] === '') {
     newTags = null
   }
